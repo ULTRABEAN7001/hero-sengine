@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://h3iwcyyge6m1"]
+
+[ext_resource type="Script" path="res://rotator.gd" id="1_g0gtm"]
+[ext_resource type="Texture2D" uid="uid://gte84p3m35nt" path="res://Sprite-0001.png" id="1_yc1v4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qug5"]
+atlas = ExtResource("1_yc1v4")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ne0jn"]
+radius = 67.0
+
+[node name="Rotator" type="RigidBody2D"]
+position = Vector2(766, 416)
+gravity_scale = 1.66533e-16
+script = ExtResource("1_g0gtm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_5qug5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_ne0jn")

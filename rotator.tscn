@@ -16,8 +16,18 @@ gravity_scale = 1.66533e-16
 script = ExtResource("1_g0gtm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.08165e-12, 2.08165e-12)
+scale = Vector2(0.75, 0.75)
 texture = SubResource("AtlasTexture_5qug5")
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
+position = Vector2(2.08165e-12, 2.08165e-12)
+scale = Vector2(0.75, 0.75)
 shape = SubResource("CircleShape2D_ne0jn")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(-23, -93)
+
+[node name="Node2D2" type="Node2D" parent="."]
+position = Vector2(30, 93)

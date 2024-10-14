@@ -1,0 +1,79 @@
+[gd_scene load_steps=12 format=3 uid="uid://blwfqeilxx82h"]
+
+[ext_resource type="Texture2D" uid="uid://gte84p3m35nt" path="res://Sprite-0001.png" id="1_5m6bm"]
+[ext_resource type="Script" path="res://fluid.gd" id="2_qv8sj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jlam2"]
+atlas = ExtResource("1_5m6bm")
+region = Rect2(1280, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8cnk"]
+atlas = ExtResource("1_5m6bm")
+region = Rect2(1536, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umi20"]
+atlas = ExtResource("1_5m6bm")
+region = Rect2(1792, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50qs5"]
+atlas = ExtResource("1_5m6bm")
+region = Rect2(2048, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26e43"]
+atlas = ExtResource("1_5m6bm")
+region = Rect2(1280, 256, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfay6"]
+atlas = ExtResource("1_5m6bm")
+region = Rect2(1536, 256, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikp3m"]
+atlas = ExtResource("1_5m6bm")
+region = Rect2(1792, 256, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7rk0"]
+atlas = ExtResource("1_5m6bm")
+region = Rect2(2048, 256, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b6edx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jlam2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g8cnk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umi20")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50qs5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26e43")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gfay6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikp3m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7rk0")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 10.0
+}]
+
+[node name="fluid" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_b6edx")
+frame_progress = 0.976925
+speed_scale = 0.5
+script = ExtResource("2_qv8sj")

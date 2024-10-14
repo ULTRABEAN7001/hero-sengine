@@ -1,17 +1,61 @@
-[gd_scene load_steps=3 format=3 uid="uid://bw1785mb8017r"]
+[gd_scene load_steps=6 format=3 uid="uid://bw1785mb8017r"]
 
+[ext_resource type="PackedScene" uid="uid://cxvfg1u2j37qc" path="res://rotator_stand.tscn" id="1_3v7pp"]
+[ext_resource type="Script" path="res://main.gd" id="1_oy8q5"]
 [ext_resource type="PackedScene" uid="uid://h3iwcyyge6m1" path="res://rotator.tscn" id="1_u5im5"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_om3hs"]
-size = Vector2(978, 75)
+[ext_resource type="PackedScene" uid="uid://d2g3p1kaduip" path="res://fire.tscn" id="4_ryke6"]
+[ext_resource type="PackedScene" uid="uid://blwfqeilxx82h" path="res://fluid.tscn" id="5_c3nqv"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_oy8q5")
+
+[node name="rotator_stand" parent="." instance=ExtResource("1_3v7pp")]
+position = Vector2(579, 515)
 
 [node name="Rotator" parent="." instance=ExtResource("1_u5im5")]
-position = Vector2(554, 158)
+position = Vector2(580, 262)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(583, 384)
+[node name="Fire" parent="." instance=ExtResource("4_ryke6")]
+position = Vector2(574, 572)
+scale = Vector2(0.75, 0.75)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("RectangleShape2D_om3hs")
+[node name="Temperature" type="Label" parent="."]
+offset_left = 949.0
+offset_top = 15.0
+offset_right = 989.0
+offset_bottom = 38.0
+theme_override_font_sizes/font_size = 30
+text = "100"
+
+[node name="Instructions" type="Label" parent="."]
+offset_left = 9.0
+offset_top = 15.0
+offset_right = 671.0
+offset_bottom = 57.0
+theme_override_font_sizes/font_size = 30
+text = "Use the arrow keys to adjust the temperature
+Use the buttons to choose what liquid should be inside the ball"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 10.0
+offset_top = 143.0
+offset_right = 96.0
+offset_bottom = 186.0
+theme_override_font_sizes/font_size = 25
+text = "Water"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 12.0
+offset_top = 191.0
+offset_right = 210.0
+offset_bottom = 234.0
+theme_override_font_sizes/font_size = 25
+text = "Liquid Nitrogen"
+
+[node name="fluid" parent="." instance=ExtResource("5_c3nqv")]
+position = Vector2(227, 367)
+
+[connection signal="pressed" from="Button" to="Rotator" method="_on_button_pressed"]
+[connection signal="pressed" from="Button" to="fluid" method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="Rotator" method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button2" to="fluid" method="_on_button_2_pressed"]

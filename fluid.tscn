@@ -74,6 +74,6 @@ animations = [{
 
 [node name="fluid" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_b6edx")
-frame_progress = 0.976925
+frame_progress = 0.0796944
 speed_scale = 0.5
 script = ExtResource("2_qv8sj")

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bv52o68hcjjye"]
+
+[ext_resource type="Texture2D" uid="uid://gte84p3m35nt" path="res://Sprite-0001.png" id="1_2imns"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k32a5"]
+atlas = ExtResource("1_2imns")
+region = Rect2(256, 0, 256, 256)
+
+[node name="trail" type="Sprite2D"]
+position = Vector2(-2, 8)
+scale = Vector2(0.617188, 0.554688)
+texture = SubResource("AtlasTexture_k32a5")

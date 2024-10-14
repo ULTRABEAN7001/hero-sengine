@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://h3iwcyyge6m1"]
+[gd_scene load_steps=6 format=3 uid="uid://h3iwcyyge6m1"]
 
 [ext_resource type="Script" path="res://rotator.gd" id="1_g0gtm"]
 [ext_resource type="Texture2D" uid="uid://gte84p3m35nt" path="res://Sprite-0001.png" id="1_yc1v4"]
+[ext_resource type="PackedScene" uid="uid://bv52o68hcjjye" path="res://trail.tscn" id="3_i5ob3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5qug5"]
 atlas = ExtResource("1_yc1v4")
@@ -26,8 +27,19 @@ position = Vector2(2.08165e-12, 2.08165e-12)
 scale = Vector2(0.75, 0.75)
 shape = SubResource("CircleShape2D_ne0jn")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="tail1" type="Node2D" parent="."]
 position = Vector2(-23, -93)
 
-[node name="Node2D2" type="Node2D" parent="."]
+[node name="trail" parent="tail1" instance=ExtResource("3_i5ob3")]
+position = Vector2(-59, -34)
+flip_v = true
+
+[node name="tail2" type="Node2D" parent="."]
 position = Vector2(30, 93)
+
+[node name="trail" parent="tail2" instance=ExtResource("3_i5ob3")]
+position = Vector2(57, 34)
+flip_h = true
+
+[node name="trail_timer" type="Timer" parent="."]
+wait_time = 0.5
